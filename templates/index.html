@@ -1,0 +1,21 @@
+
+<form action="/save/" method="post">
+    {% csrf_token %}
+
+<input type="email" placeholder="Email" name="t1"><br><br>
+<textarea placeholder="Comment" name="t2"></textarea><br><br>
+<button type="submit">Send</button>
+</form>
+
+{% if messages %}
+    {% for message in messages %}
+        <h2>{{ message }}</h2>
+    {% endfor %}
+{% endif %}
+<br>
+<br>
+<form action="/index/">
+    {% csrf_token %}
+    <button type="submit">BACK</button>
+</form>
+
